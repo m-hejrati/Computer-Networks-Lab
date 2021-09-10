@@ -1,0 +1,72 @@
+
+!
+Version 12.3
+service timestamps debug uptime
+service timestamps log uptime
+no service password-encryption
+!
+hostname router11
+enable secret 5 $1$4RPT$VuvKE6tAxFhUnavITpx3sg
+enable password CISCO
+!
+!
+username MyName password mypassword
+username lab3 password 153759
+!
+!
+!
+ip subnet-zero
+!
+ip cef
+no ip domain-lookup
+!
+!
+!
+!
+!
+!
+!
+!
+interface Serial0/0/0
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+interface Serial0/0/1
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+interface FastEthernet0/0
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+interface FastEthernet0/1
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+!
+!
+!
+!
+ip classless
+no ip http server
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ login local
+ history size 50
+line aux 0
+line vty 0 4
+!
+!
+no scheduler allocate
+end
+
